@@ -1,0 +1,17 @@
+<ul>
+  <li *ngFor="let message of messages"><strong>{{message.sender}}: </strong> {{message.body}}</li>
+</ul>
+<div class="panel-footer">
+  <div class="row">
+    <form>
+      <div class="col-xs-9">
+        <input [(ngModel)]="message.body" type="text" placeholder="Enter your text" class="form-control chat-input" name="body">
+        <input [(ngModel)]="message.sender" type="text" placeholder="Enter your text" class="form-control chat-input" name="body">
+      </div>
+      <div class="col-xs-3">
+        <button (click)="createMessage()" [disabled]="currentSender && !message.body" class="btn btn-primary btn-block" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
