@@ -28,7 +28,7 @@ export class RoomComponent implements OnInit {
        this.id = params['id'];
     });
 
-    this.ng2cable.subscribe('http://localhost:3000/cable', 'RoomChannel', {
+    this.ng2cable.subscribe('/cable', 'RoomChannel', {
       room: this.id
     })
 
